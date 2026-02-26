@@ -1,0 +1,207 @@
+{
+    "app": {
+        "title": "Warhammer 40k"
+    },
+    "nav": {
+        "home": "Home",
+        "factions": "Factions",
+        "gallery": "Gallery",
+        "products": "Products",
+        "contact": "Contact"
+    },
+    "header": {
+        "openMenu": "Open menu",
+        "logoAlt": "Eagle",
+        "language": "Language"
+    },
+    "products": {
+        "title": "Product Management",
+        "add": "Add Product",
+        "emptyTitle": "No products available.",
+        "emptySubtitle": "Add your first product using the top button.",
+        "stock": "Stock: {{count}} units",
+        "edit": "Edit",
+        "delete": "Delete",
+        "confirmDelete": "Are you sure you want to delete \"{{name}}\"?",
+        "deletedOk": "Product deleted successfully",
+        "deletedError": "Error deleting product",
+        "categories": {
+            "miniaturas": "Miniatures",
+            "libros": "Books",
+            "videojuegos": "Video games",
+            "accesorios": "Accessories",
+            "pinturas": "Paints"
+        }
+    },
+    "contact": {
+        "title": "Join the Crusade",
+        "nameLabel": "Full name *",
+        "namePlaceholder": "Your name",
+        "emailLabel": "Email *",
+        "emailPlaceholder": "you@email.com",
+        "factionLabel": "Favorite faction *",
+        "factionPlaceholder": "Select a faction",
+        "messageLabel": "Message *",
+        "messagePlaceholder": "Write your message here...",
+        "newsletter": "I want Imperium news",
+        "submit": "Send Message",
+        "success": "Message sent! The Emperor protects."
+    },
+    "footer": {
+        "rights": "© 2024 Warhammer 40k Fan Page. All rights reserved. Games Workshop Ltd."
+    },
+    "sections": {
+        "factionsTitle": "Factions of the 41st Millennium",
+        "galleryTitle": "Gallery of Epic Battles"
+    },
+    "factions": {
+        "spaceMarines": "Space Marines",
+        "chaos": "Chaos",
+        "orks": "Orks",
+        "aeldari": "Aeldari",
+        "necrons": "Necrons",
+        "tau": "T'au",
+        "tyranids": "Tyranids"
+    },
+    "productForm": {
+        "titleAdd": "Add Product",
+        "titleEdit": "Edit Product",
+        "submitCreate": "Save Product",
+        "submitUpdate": "Update Product",
+        "cancel": "Cancel",
+        "notFound": "Product not found",
+        "fixErrors": "Please fix the errors in the form",
+        "createdOk": "Product created successfully",
+        "updatedOk": "Product updated successfully",
+        "fields": {
+            "name": {
+                "label": "Product Name *",
+                "placeholder": "e.g., Ultramarines Primaris"
+            },
+            "category": {
+                "label": "Category *",
+                "placeholder": "Select a category"
+            },
+            "price": {
+                "label": "Price (€) *",
+                "placeholder": "0.00"
+            },
+            "description": {
+                "label": "Description *",
+                "placeholder": "Product description"
+            },
+            "stock": {
+                "label": "Stock *",
+                "placeholder": "0"
+            }
+        }
+    },
+    "validation": {
+        "contact": {
+            "name": {
+                "required": "Name is required",
+                "min": "Name must be at least 2 characters",
+                "max": "Name cannot exceed 50 characters",
+                "format": "Name can only contain letters and spaces"
+            },
+            "email": {
+                "required": "Email is required",
+                "format": "Email format is not valid",
+                "max": "Email cannot exceed 100 characters"
+            },
+            "faction": {
+                "required": "Please select a faction",
+                "invalid": "Invalid faction"
+            },
+            "message": {
+                "required": "Message is required",
+                "min": "Message must be at least 10 characters",
+                "max": "Message cannot exceed 1000 characters"
+            }
+        },
+        "product": {
+            "name": {
+                "required": "Product name is required",
+                "min": "Name must be at least 3 characters",
+                "max": "Name cannot exceed 100 characters"
+            },
+            "category": {
+                "required": "Please select a category",
+                "invalid": "Invalid category"
+            },
+            "price": {
+                "nan": "Price must be a valid number",
+                "negative": "Price cannot be negative",
+                "zero": "Price must be greater than 0",
+                "max": "Price is too high"
+            },
+            "description": {
+                "required": "Description is required",
+                "min": "Description must be at least 10 characters",
+                "max": "Description cannot exceed 500 characters"
+            },
+            "stock": {
+                "nan": "Stock must be a valid number",
+                "negative": "Stock cannot be negative",
+                "max": "Stock is too high"
+            }
+        }
+    },
+    "factionsContent": {
+        "chaosGods": {
+            "title": "The Chaos Gods",
+            "alt": "Chaos Gods",
+            "desc": "Khorne (blood), Nurgle (pestilence), Tzeentch (change), and Slaanesh (excess). Warp entities fed by mortal emotion, they corrupt minds and unravel reality."
+        },
+        "spaceMarines": {
+            "title": "Space Marines",
+            "alt": "Space Marines",
+            "desc": "Genetically engineered superhuman warriors, the Adeptus Astartes are the Imperium’s elite defenders. Organized into Chapters, they wield power armor and devastating weaponry."
+        },
+        "astraMilitarum": {
+            "title": "Astra Militarum",
+            "alt": "Imperial Guard",
+            "desc": "The galaxy’s largest army, made up of billions of human soldiers. Individually fragile, they prevail through sheer numbers, artillery, and armored might."
+        },
+        "aeldari": {
+            "title": "Aeldari",
+            "alt": "Aeldari",
+            "desc": "An ancient xenos species of formidable psychic and martial prowess. The Craftworlds are survivors of a fallen empire, fighting to stave off extinction."
+        },
+        "drukhari": {
+            "title": "Drukhari",
+            "alt": "Drukhari",
+            "desc": "Dark kin dwelling in Commorragh within the Webway. Sadistic raiders who feed on suffering to keep their souls from being claimed by Slaanesh."
+        },
+        "necrons": {
+            "title": "Necrons",
+            "alt": "Necrons",
+            "desc": "Ancient tomb builders, a robotic race born of biotransference eons ago. They awaken from millennia of stasis to reclaim the galaxy they once ruled."
+        },
+        "orks": {
+            "title": "Orks",
+            "alt": "Orks in battle",
+            "desc": "Brutal creatures who live for war. Their ramshackle tech runs on collective belief, and their massive Waaagh!s tear through worlds in unrestrained violence."
+        },
+        "chaos": {
+            "title": "Chaos",
+            "alt": "Chaos Space Marines",
+            "desc": "Corrupted forces devoted to the Dark Gods of the Warp. Traitor marines, daemons, and cultists seek to shatter the Imperium and plunge the galaxy into anarchy."
+        },
+        "tau": {
+            "title": "T'au Empire",
+            "alt": "T'au",
+            "desc": "A young xenos empire guided by the Greater Good. They use advanced technology and diplomacy to expand, while darker truths lurk behind their idealistic façade."
+        },
+        "tyranids": {
+            "title": "Tyranids",
+            "alt": "Tyranids",
+            "desc": "Extragalactic swarms that devour biomass. A ravenous hive mind adapts its organisms to consume entire worlds, leaving nothing living behind."
+        }
+    },
+    "error": {
+        "lostInWarp": "Lost in the Warp",
+        "lostInWarpDesc": "The Geller Field has failed. Your vessel is adrift in the Immaterium. This path does not exist in the Emperor's records.",
+        "returnHome": "Return to Safety"
+    }
+}

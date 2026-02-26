@@ -1,0 +1,207 @@
+{
+    "app": {
+        "title": "Warhammer 40k"
+    },
+    "nav": {
+        "home": "Inicio",
+        "factions": "Facciones",
+        "gallery": "Galería",
+        "products": "Productos",
+        "contact": "Contacto"
+    },
+    "header": {
+        "openMenu": "Abrir menú",
+        "logoAlt": "Águila",
+        "language": "Idioma"
+    },
+    "products": {
+        "title": "Gestión de Productos",
+        "add": "Añadir Producto",
+        "emptyTitle": "No hay productos disponibles.",
+        "emptySubtitle": "Añade tu primer producto usando el botón superior.",
+        "stock": "Stock: {{count}} unidades",
+        "edit": "Editar",
+        "delete": "Eliminar",
+        "confirmDelete": "¿Estás seguro de que deseas eliminar \"{{name}}\"?",
+        "deletedOk": "Producto eliminado correctamente",
+        "deletedError": "Error al eliminar el producto",
+        "categories": {
+            "miniaturas": "Miniaturas",
+            "libros": "Libros",
+            "videojuegos": "Videojuegos",
+            "accesorios": "Accesorios",
+            "pinturas": "Pinturas"
+        }
+    },
+    "contact": {
+        "title": "Únete a la Cruzada",
+        "nameLabel": "Nombre Completo *",
+        "namePlaceholder": "Tu nombre",
+        "emailLabel": "Email *",
+        "emailPlaceholder": "tu@email.com",
+        "factionLabel": "Facción Favorita *",
+        "factionPlaceholder": "Selecciona una facción",
+        "messageLabel": "Mensaje *",
+        "messagePlaceholder": "Escribe tu mensaje aquí...",
+        "newsletter": "Deseo recibir noticias del Imperium",
+        "submit": "Enviar Mensaje",
+        "success": "¡Mensaje enviado con éxito! El Emperador protege."
+    },
+    "footer": {
+        "rights": "© 2024 Warhammer 40k Fan Page. Todos los derechos reservados. Games Workshop Ltd."
+    },
+    "sections": {
+        "factionsTitle": "Facciones del Milenio 41",
+        "galleryTitle": "Galería de Batallas Épicas"
+    },
+    "factions": {
+        "spaceMarines": "Marines Espaciales",
+        "chaos": "Caos",
+        "orks": "Orkos",
+        "aeldari": "Aeldari",
+        "necrons": "Necrones",
+        "tau": "Tau",
+        "tyranids": "Tiránidos"
+    },
+    "productForm": {
+        "titleAdd": "Añadir Producto",
+        "titleEdit": "Editar Producto",
+        "submitCreate": "Guardar Producto",
+        "submitUpdate": "Actualizar Producto",
+        "cancel": "Cancelar",
+        "notFound": "Producto no encontrado",
+        "fixErrors": "Por favor, corrige los errores en el formulario",
+        "createdOk": "Producto creado correctamente",
+        "updatedOk": "Producto actualizado correctamente",
+        "fields": {
+            "name": {
+                "label": "Nombre del Producto *",
+                "placeholder": "Ej: Ultramarines Primaris"
+            },
+            "category": {
+                "label": "Categoría *",
+                "placeholder": "Selecciona una categoría"
+            },
+            "price": {
+                "label": "Precio (€) *",
+                "placeholder": "0.00"
+            },
+            "description": {
+                "label": "Descripción *",
+                "placeholder": "Descripción del producto"
+            },
+            "stock": {
+                "label": "Stock *",
+                "placeholder": "0"
+            }
+        }
+    },
+    "validation": {
+        "contact": {
+            "name": {
+                "required": "El nombre es obligatorio",
+                "min": "El nombre debe tener al menos 2 caracteres",
+                "max": "El nombre no puede exceder 50 caracteres",
+                "format": "El nombre solo puede contener letras y espacios"
+            },
+            "email": {
+                "required": "El email es obligatorio",
+                "format": "El formato del email no es válido",
+                "max": "El email no puede exceder 100 caracteres"
+            },
+            "faction": {
+                "required": "Debes seleccionar una facción",
+                "invalid": "Facción no válida"
+            },
+            "message": {
+                "required": "El mensaje es obligatorio",
+                "min": "El mensaje debe tener al menos 10 caracteres",
+                "max": "El mensaje no puede exceder 1000 caracteres"
+            }
+        },
+        "product": {
+            "name": {
+                "required": "El nombre del producto es obligatorio",
+                "min": "El nombre debe tener al menos 3 caracteres",
+                "max": "El nombre no puede exceder 100 caracteres"
+            },
+            "category": {
+                "required": "Debes seleccionar una categoría",
+                "invalid": "Categoría no válida"
+            },
+            "price": {
+                "nan": "El precio debe ser un número válido",
+                "negative": "El precio no puede ser negativo",
+                "zero": "El precio debe ser mayor que 0",
+                "max": "El precio es demasiado alto"
+            },
+            "description": {
+                "required": "La descripción es obligatoria",
+                "min": "La descripción debe tener al menos 10 caracteres",
+                "max": "La descripción no puede exceder 500 caracteres"
+            },
+            "stock": {
+                "nan": "El stock debe ser un número válido",
+                "negative": "El stock no puede ser negativo",
+                "max": "El stock es demasiado alto"
+            }
+        }
+    },
+    "factionsContent": {
+        "chaosGods": {
+            "title": "Los Dioses del Caos",
+            "alt": "Dioses del Caos",
+            "desc": "Khorne (sangre), Nurgle (pestilencia), Tzeentch (cambio) y Slaanesh (exceso). Entidades de la Disformidad alimentadas por emociones mortales; corrompen mentes y deshilachan la realidad."
+        },
+        "spaceMarines": {
+            "title": "Marines Espaciales",
+            "alt": "Marines Espaciales",
+            "desc": "Guerreros superhumanos creados mediante ingeniería genética. Los Adeptus Astartes son la élite defensora del Imperio: organizados en Capítulos, portan servoarmadura y armas devastadoras."
+        },
+        "astraMilitarum": {
+            "title": "Astra Militarum",
+            "alt": "Guardia Imperial",
+            "desc": "El mayor ejército de la galaxia, formado por miles de millones de soldados humanos. Frágiles de forma individual, vencen por números, artillería y potencia blindada."
+        },
+        "aeldari": {
+            "title": "Aeldari",
+            "alt": "Aeldari",
+            "desc": "Una antigua especie xenos de enorme poder psíquico y marcial. Los Mundos Astronave son los supervivientes de un imperio caído, luchando por evitar la extinción."
+        },
+        "drukhari": {
+            "title": "Drukhari",
+            "alt": "Drukhari",
+            "desc": "Parientes oscuros que habitan Commorragh dentro de la Telaraña. Saqueadores sádicos que se alimentan del sufrimiento para impedir que Slaanesh reclame sus almas."
+        },
+        "necrons": {
+            "title": "Necrones",
+            "alt": "Necrones",
+            "desc": "Antiguos señores de las tumbas, una raza robótica nacida de la biotransferencia hace eones. Despiertan tras milenios de estasis para reclamar la galaxia que una vez gobernaron."
+        },
+        "orks": {
+            "title": "Orkos",
+            "alt": "Orkos en batalla",
+            "desc": "Criaturas brutales que viven para la guerra. Su tecnología improvisada funciona por creencia colectiva, y sus Waaagh! arrasan mundos con violencia desenfrenada."
+        },
+        "chaos": {
+            "title": "Caos",
+            "alt": "Marines Espaciales del Caos",
+            "desc": "Fuerzas corrompidas devotas de los Dioses Oscuros de la Disformidad. Marines traidores, demonios y cultistas buscan quebrar el Imperio y sumir la galaxia en la anarquía."
+        },
+        "tau": {
+            "title": "Imperio T'au",
+            "alt": "T'au",
+            "desc": "Un joven imperio xenos guiado por el Bien Supremo. Usa tecnología avanzada y diplomacia para expandirse, mientras verdades más oscuras se esconden tras su fachada idealista."
+        },
+        "tyranids": {
+            "title": "Tiránidos",
+            "alt": "Tiránidos",
+            "desc": "Enjambres extragalácticos que devoran biomasa. Una mente colmena hambrienta adapta sus organismos para consumir mundos enteros, sin dejar nada vivo."
+        }
+    },
+    "error": {
+        "lostInWarp": "Perdido en la Disformidad",
+        "lostInWarpDesc": "El campo Geller ha fallado. Tu nave está a la deriva en el Inmaterium. Este camino no existe en los registros del Emperador.",
+        "returnHome": "Regresar a Salvo"
+    }
+}

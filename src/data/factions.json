@@ -1,0 +1,12 @@
+[
+  {"id":"chaosGods","img":"/img/chaos-gods.jpg"},
+  {"id":"spaceMarines","img":"/img/space-marines.jpeg"},
+  {"id":"astraMilitarum","img":"/img/imperial-guard.jpeg"},
+  {"id":"aeldari","img":"/img/eldar.jpg"},
+  {"id":"drukhari","img":"/img/dark-eldar.jpg"},
+  {"id":"necrons","img":"/img/necron.jpg"},
+  {"id":"orks","img":"/img/orks.png"},
+  {"id":"chaos","img":"/img/chaos-marines.jpg"},
+  {"id":"tau","img":"/img/tau.jpg"},
+  {"id":"tyranids","img":"/img/tyranids.jpg"}
+]
