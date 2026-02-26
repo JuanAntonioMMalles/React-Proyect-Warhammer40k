@@ -1,166 +1,226 @@
-React Project – Warhammer 40K
+# React Warhammer 40K Project
 
-Website created as a project for the Markup Language (LND) subject.
-This version has been migrated to a React + Vite architecture, improving modularity, scalability, and maintainability.
+A React-based web application inspired by the Warhammer 40,000 universe.
+This version is a full migration from static HTML to a modern React architecture using Vite, React Router, Context API, and internationalization.
 
-The theme is based on the Warhammer 40,000 universe.
+---
 
-Getting Started
+# Tech Stack
 
-These instructions will help you run the project locally for development and testing.
+* **React 18**
+* **Vite**
+* **React Router DOM**
+* **Context API**
+* **i18next**
+* **react-i18next**
+* **i18next-browser-languagedetector**
+* **i18next-http-backend**
+* **LocalStorage API**
+* **CSS3**
 
-Prerequisites
+---
 
-You must have:
+# Installation
 
-Node.js (v18 or higher recommended)
+## 1. Clone the repository
 
-npm (comes with Node.js)
-
-A code editor (VS Code recommended)
-
-Check versions:
-
-node -v
-npm -v
-Installation
-
-Clone the repository:
-
+```bash
 git clone https://github.com/JuanAntonioMMalles/OfficialProyect.git
-
-Navigate into the project folder:
-
 cd React-Proyect-Warhammer40k
+```
 
-Install dependencies:
+## 2. Install dependencies
 
+```bash
 npm install
+```
 
-Run the development server:
+## 3. Run development server
 
+```bash
 npm run dev
+```
 
-Open in your browser:
+Application runs at:
 
+```
 http://localhost:5173
-Project Structure
+```
+
+---
+
+# Project Structure
+
+```
 React-Proyect-Warhammer40k/
 │
 ├── public/
-│   └── images/
+│   ├── img/                  # All project images
+│   └── locales/              # Translations
+│       ├── en/translation.json
+│       └── es/translation.json
 │
 ├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Footer.jsx
-│   │   ├── FactionCard.jsx
-│   │   ├── Gallery.jsx
-│   │   ├── ProductForm.jsx
-│   │   └── ProductList.jsx
-│   │
-│   ├── pages/
-│   │   ├── Home.jsx
-│   │   └── Products.jsx
-│   │
-│   ├── data/
-│   │   └── factions.js
-│   │
 │   ├── App.jsx
 │   ├── main.jsx
-│   └── index.css
+│   ├── style.css
+│   ├── i18n.js               # i18next configuration
 │
-├── package.json
-├── vite.config.js
-└── README.md
-Features
-Home Page
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Layout.jsx
+│   │   ├── Notification.jsx
+│   │   └── ScrollToHash.jsx
+│
+│   ├── sections/
+│   │   ├── FactionsSection.jsx
+│   │   ├── GallerySection.jsx
+│   │   ├── ProductsSection.jsx
+│   │   └── ContactSection.jsx
+│
+│   ├── pages/
+│   │   ├── HomePage.jsx
+│   │   ├── ProductFormPage.jsx
+│   │   └── NotFoundPage.jsx
+│
+│   ├── contexts/
+│   │   └── ProductsContext.jsx
+│
+│   ├── hooks/
+│   │   ├── useClickOutside.js
+│   │   └── useLocalStorage.js
+│
+│   └── data/
+│       ├── factions.json
+│       └── gallery.json
+│
+└── package.json
+```
 
-Responsive layout (desktop, tablet, mobile)
+---
 
-10 Warhammer 40K factions displayed dynamically
+# Core Features
 
-Faction cards rendered using reusable React components
+## 1. Multi-language Support (EN / ES)
 
-Epic battles gallery section
+Implemented using:
 
-Smooth navigation
+* i18next
+* react-i18next
+* Browser language detection
+* Translation files in `/public/locales`
 
-Thematic design (Imperium red and gold palette)
+Language switching is dynamic and automatic based on browser settings.
 
-Product Management Page
+---
 
-Create products
+## 2. Routing (React Router)
 
-Edit products
+Pages:
 
-Delete products
+* `/` → HomePage
+* `/products/new` → ProductFormPage
+* `*` → NotFoundPage
 
-Product category selection
+Routing handled in `App.jsx`.
 
-Form validation
+---
 
-LocalStorage persistence
+## 3. State Management (Context API)
 
-Dynamic rendering using React state
+`ProductsContext.jsx` provides:
 
-Technologies Used
+* Product list
+* Add product
+* Edit product
+* Delete product
+* Persistent storage via LocalStorage
 
-React 18
+Custom hook `useLocalStorage.js` ensures data persistence between sessions.
 
-Vite
+---
 
-JavaScript (ES6+)
+## 4. Dynamic Sections
 
-CSS3
+### FactionsSection
 
-LocalStorage API
+* Data loaded from `factions.json`
+* Dynamically rendered cards
+* Fully translatable content
 
-Font Awesome
+### GallerySection
 
-Google Fonts
+* Data-driven gallery using `gallery.json`
+* Image overlays
 
-React Architecture
+### ProductsSection
 
-Functional components
+* Displays stored products
+* CRUD operations via context
 
-Props-based data flow
+### ContactSection
 
-useState for state management
+* Contact form
+* Validation
+* Notification component integration
 
-useEffect for lifecycle logic
+---
 
-Component reusability
+## 5. Custom Hooks
 
-Data-driven rendering (arrays mapped to components)
+### useLocalStorage
 
-Example pattern:
+Abstracts LocalStorage logic for clean state persistence.
 
-{factions.map((faction) => (
-  <FactionCard key={faction.id} faction={faction} />
-))}
-Responsive Design
+### useClickOutside
 
-Breakpoints implemented with CSS:
+Detects clicks outside elements (used for UI interactions such as menus or dropdowns).
 
-Desktop: > 1024px
+---
 
-Tablet: 768px – 1024px
+## 6. Reusable Components
 
-Mobile: < 768px
+* Header (navigation + language toggle)
+* Footer
+* Layout wrapper
+* Notification system
+* ScrollToHash (anchor navigation behavior)
 
-Layout uses:
+---
 
-CSS Grid
+# Internationalization Configuration
 
-Flexbox
+Located in:
 
-Media queries
+```
+src/i18n.js
+```
 
-Data Persistence
+Features:
 
-Products are stored in LocalStorage:
+* Language detection
+* HTTP backend loading
+* JSON-based translations
+* Namespace support
 
+---
+
+# Available Scripts
+
+```bash
+npm run dev       # Development server
+npm run build     # Production build
+npm run preview   # Preview production build
+```
+
+---
+
+# Data Structure (Products)
+
+Example product object:
+
+```javascript
 {
   id: string,
   name: string,
@@ -169,54 +229,50 @@ Products are stored in LocalStorage:
   description: string,
   stock: number
 }
-Available Scripts
-npm run dev       # Start development server
-npm run build     # Production build
-npm run preview   # Preview production build
-Current Version
+```
 
-v3.0.0 – React Migration
+Stored in LocalStorage via custom hook.
 
-Changelog
+---
 
-Migrated from static HTML/CSS/JS to React + Vite
+# Architecture Highlights
 
-Converted sections into reusable components
+* Fully component-based design
+* Separation of pages, sections, components
+* Centralized state with Context API
+* Modular translation system
+* Scalable folder structure
+* Data-driven rendering via JSON files
+* Clean hook abstraction
 
-Implemented state-based product management
+---
 
-Improved project structure
+# Current Version
 
-Enhanced scalability and maintainability
+**v3.1.0 – React Architecture + Internationalization + Routing**
 
-Optimized responsive layout
+### Improvements over previous version
 
-Authors
+* Migrated from static HTML to React
+* Added multilingual system
+* Introduced routing
+* Implemented Context API
+* Improved scalability
+* Modularized sections
+* Enhanced maintainability
 
-Juan Antonio
-GitHub: https://github.com/JuanAntonioMMalles
+---
 
-License
+# Future Improvements
 
-This project is an unofficial fan page and is not affiliated with Games Workshop Ltd.
-Warhammer 40,000 and all related trademarks belong to Games Workshop Ltd.
+* Backend integration (Node/Express)
+* Authentication system
+* Role-based access
+* Product search and filtering
+* Admin dashboard
+* Form validation library integration
+* Unit testing (Vitest / React Testing Library)
+* Deployment configuration (Vercel / Netlify)
 
-MIT License.
+---
 
-Future Improvements
-
-Multi-language support (EN / ES)
-
-Routing with React Router
-
-Backend integration (Node/Express)
-
-Authentication system
-
-Advanced filtering and search
-
-Dark/Light theme toggle
-
-Image upload for products
-
-Deployment configuration
