@@ -28,6 +28,7 @@ body {
 
 
 #header {
+
   width: min(1200px, calc(100% - 2rem));
   min-height: 96px;
   background: linear-gradient(135deg, #8b0000 0%, #b22222 50%, #8b0000 100%);
@@ -43,6 +44,9 @@ body {
   box-sizing: border-box;
   gap: 0.75rem;
   flex-wrap: wrap;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
 }
 
 #header-buttons {
@@ -790,7 +794,8 @@ body {
 
   #menu-hamburguer {
     font-size: 1.5rem;
-    padding: 8px 12px;
+    padding: 10px 12px;
+    margin-top: 30px;
   }
 
   #header-buttons .header-icon {

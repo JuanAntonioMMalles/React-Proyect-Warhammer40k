@@ -11,23 +11,23 @@ export default function Header() {
 
   useClickOutside(containerRef, () => setOpen(false), open);
 
-  const isHome = location.pathname === "/";
+  const isHome = location.pathname === "/home";
 
   const navItems = useMemo(() => {
     if (isHome) {
       return [
-        { to: "/#factions", label: t("nav.factions"), icon: "fa-users" },
-        { to: "/#gallery", label: t("nav.gallery"), icon: "fa-images" },
-        { to: "/#products", label: t("nav.products"), icon: "fa-box" },
-        { to: "/#contact", label: t("nav.contact"), icon: "fa-envelope" }
+        { to: "/factions", label: t("nav.factions"), icon: "fa-users" },
+        { to: "/products", label: t("nav.products"), icon: "fa-box" },
+        { to: "/home#contact", label: t("nav.contact"), icon: "fa-envelope" }
       ];
     }
 
     return [
-      { to: "/", label: t("nav.home"), icon: "fa-home" },
-      { to: "/#factions", label: t("nav.factions"), icon: "fa-users" },
-      { to: "/#gallery", label: t("nav.gallery"), icon: "fa-images" },
-      { to: "/#contact", label: t("nav.contact"), icon: "fa-envelope" }
+      { to: "/home", label: t("nav.home"), icon: "fa-home" },
+      { to: "/factions", label: t("nav.factions"), icon: "fa-users" },
+      { to: "/home#gallery", label: t("nav.gallery"), icon: "fa-images" },
+      { to: "/products", label: t("nav.products"), icon: "fa-box" },
+      { to: "/home#contact", label: t("nav.contact"), icon: "fa-envelope" }
     ];
   }, [isHome, t]);
 
