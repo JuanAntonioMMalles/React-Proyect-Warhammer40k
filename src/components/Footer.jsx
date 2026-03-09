@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -23,8 +24,17 @@ export default function Footer() {
           </svg>
         </a>
       </div>
+
       <div id="footer-copyright">
         {t("footer.rights")}
+      </div>
+
+      <div id="footer-legal">
+        <NavLink to="/privacy">{t("footer.privacy")}</NavLink>
+        <span>|</span>
+        <NavLink to="/cookies">{t("footer.cookies")}</NavLink>
+        <span>|</span>
+        <NavLink to="/terms">{t("footer.terms")}</NavLink>
       </div>
     </footer>
   );

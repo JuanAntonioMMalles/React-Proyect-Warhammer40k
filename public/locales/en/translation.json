@@ -48,7 +48,30 @@
         "success": "Message sent! The Emperor protects."
     },
     "footer": {
-        "rights": "© 2024 Warhammer 40k Fan Page. All rights reserved. Games Workshop Ltd."
+        "rights": "© 2024 Warhammer 40k Fan Page. All rights reserved. Games Workshop Ltd.",
+        "privacy": "Privacy Policy",
+        "cookies": "Cookies Policy",
+        "terms": "Terms of Use"
+    },
+    "legalPages": {
+        "privacy": {
+            "title": "Privacy Policy",
+            "p1": "This website respects the privacy of its users. Personal data is not collected without the user's consent.",
+            "p2": "Any information provided through forms or contact sections will only be used to respond to requests or improve the user experience on the site.",
+            "p3": "This fan page is for educational and informative purposes only and is not an official Games Workshop website."
+        },
+        "cookies": {
+            "title": "Cookies Policy",
+            "p1": "This website may use technical cookies necessary for its proper operation.",
+            "p2": "Cookies are small files stored in the user's browser to improve navigation and remember certain preferences.",
+            "p3": "By continuing to browse this website, the user accepts the possible use of these cookies."
+        },
+        "terms": {
+            "title": "Terms of Use",
+            "p1": "Accessing and using this website implies acceptance of these terms of use.",
+            "p2": "The content published on this website is for educational, informative, and non-commercial purposes.",
+            "p3": "All trademarks, names, and references related to Warhammer 40,000 belong to their respective owners."
+        }
     },
     "sections": {
         "factionsTitle": "Factions of the 41st Millennium",

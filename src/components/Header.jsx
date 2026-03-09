@@ -17,17 +17,16 @@ export default function Header() {
     if (isHome) {
       return [
         { to: "/factions", label: t("nav.factions"), icon: "fa-users" },
+        { to: "/contact", label: t("nav.contact"), icon: "fa-envelope" },
         { to: "/products", label: t("nav.products"), icon: "fa-box" },
-        { to: "/home#contact", label: t("nav.contact"), icon: "fa-envelope" }
       ];
     }
 
     return [
       { to: "/home", label: t("nav.home"), icon: "fa-home" },
       { to: "/factions", label: t("nav.factions"), icon: "fa-users" },
-      { to: "/home#gallery", label: t("nav.gallery"), icon: "fa-images" },
+      { to: "/contact", label: t("nav.contact"), icon: "fa-envelope" },
       { to: "/products", label: t("nav.products"), icon: "fa-box" },
-      { to: "/home#contact", label: t("nav.contact"), icon: "fa-envelope" }
     ];
   }, [isHome, t]);
 

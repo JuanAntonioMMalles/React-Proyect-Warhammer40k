@@ -48,7 +48,30 @@
         "success": "¡Mensaje enviado con éxito! El Emperador protege."
     },
     "footer": {
-        "rights": "© 2024 Warhammer 40k Fan Page. Todos los derechos reservados. Games Workshop Ltd."
+        "rights": "© 2024 Warhammer 40k Fan Page. Todos los derechos reservados. Games Workshop Ltd.",
+        "privacy": "Política de privacidad",
+        "cookies": "Política de cookies",
+        "terms": "Condiciones de uso"
+    },
+    "legalPages": {
+        "privacy": {
+            "title": "Política de privacidad",
+            "p1": "Este sitio web respeta la privacidad de sus usuarios. No se recopilan datos personales sin el consentimiento del usuario.",
+            "p2": "Cualquier información proporcionada mediante formularios o apartados de contacto se utilizará únicamente para responder solicitudes o mejorar la experiencia de usuario en el sitio.",
+            "p3": "Esta página fan tiene fines únicamente educativos e informativos y no es una web oficial de Games Workshop."
+        },
+        "cookies": {
+            "title": "Política de cookies",
+            "p1": "Este sitio web puede utilizar cookies técnicas necesarias para su correcto funcionamiento.",
+            "p2": "Las cookies son pequeños archivos que se almacenan en el navegador del usuario para mejorar la navegación y recordar ciertas preferencias.",
+            "p3": "Al continuar navegando por este sitio web, el usuario acepta el posible uso de dichas cookies."
+        },
+        "terms": {
+            "title": "Condiciones de uso",
+            "p1": "El acceso y uso de este sitio web implica la aceptación de las presentes condiciones de uso.",
+            "p2": "El contenido publicado en esta web tiene fines educativos, informativos y no comerciales.",
+            "p3": "Todas las marcas, nombres y referencias relacionadas con Warhammer 40,000 pertenecen a sus respectivos propietarios."
+        }
     },
     "sections": {
         "factionsTitle": "Facciones del Milenio 41",
