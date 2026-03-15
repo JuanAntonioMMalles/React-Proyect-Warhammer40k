@@ -1,4 +1,4 @@
-# Warhammer 40k Fan Page (React)
+# React Warhammer 40K Project
 
 ## Project Description
 
