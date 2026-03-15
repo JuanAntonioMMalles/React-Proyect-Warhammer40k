@@ -1,5 +1,5 @@
 import React, { useMemo, useRef, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useClickOutside } from "../hooks/useClickOutside.js";
 import { useTranslation } from "react-i18next";
 
@@ -16,17 +16,17 @@ export default function Header() {
   const navItems = useMemo(() => {
     if (isHome) {
       return [
-        { to: "/factions", label: t("nav.factions"), icon: "fa-users" },
         { to: "/contact", label: t("nav.contact"), icon: "fa-envelope" },
         { to: "/products", label: t("nav.products"), icon: "fa-box" },
+        { to: "/news", label: t("nav.news"), icon: "fa-newspaper" },
       ];
     }
 
     return [
       { to: "/home", label: t("nav.home"), icon: "fa-home" },
-      { to: "/factions", label: t("nav.factions"), icon: "fa-users" },
       { to: "/contact", label: t("nav.contact"), icon: "fa-envelope" },
       { to: "/products", label: t("nav.products"), icon: "fa-box" },
+      { to: "/news", label: t("nav.news"), icon: "fa-newspaper" },
     ];
   }, [isHome, t]);
 
@@ -37,11 +37,13 @@ export default function Header() {
   return (
     <header id="header" ref={containerRef}>
       <div id="header-image">
-        <img
-          src="/img/aquila-imperialis.png"
-          alt={t("header.logoAlt")}
-          style={{ paddingTop: "45px" }}
-        />
+        <Link to="/home">
+          <img
+            src="/img/aquila-imperialis.png"
+            alt={t("header.logoAlt")}
+            style={{ paddingTop: "45px" }}
+          />
+        </Link>
       </div>
 
       <div id="header-title">{t("app.title")}</div>

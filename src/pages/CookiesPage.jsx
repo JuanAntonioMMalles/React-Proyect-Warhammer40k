@@ -1,5 +1,6 @@
 import React from 'react';
 import CookiesSection from '../sections/CookiesSection.jsx';
+import { NotificationProvider } from '../components/Notification.jsx';
 
 
 export default function CookiesPage() {
