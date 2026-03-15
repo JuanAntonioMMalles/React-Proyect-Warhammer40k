@@ -1,278 +1,126 @@
 # React Warhammer 40K Project
 
-A React-based web application inspired by the Warhammer 40,000 universe.
-This version is a full migration from static HTML to a modern React architecture using Vite, React Router, Context API, and internationalization.
+## Project Description
 
----
+This project is a single-page application (SPA) developed with React and Vite, dedicated to Warhammer 40,000 enthusiasts. The application features information about factions, an image gallery, a products section, and a contact form. It uses Firebase for the backend and i18next for internationalization, offering a dynamic and localized user experience.
 
-# Tech Stack
+## Technologies Used
 
-* **React 18**
-* **Vite**
-* **React Router DOM**
-* **Context API**
-* **i18next**
-* **react-i18next**
-* **i18next-browser-languagedetector**
-* **i18next-http-backend**
-* **LocalStorage API**
-* **CSS3**
+The project has been built using the following key technologies:
 
----
+*   **React**: A JavaScript library for building interactive user interfaces.
+*   **Vite**: A next-generation web development bundler, offering fast startup and Hot Module Replacement (HMR).
+*   **Firebase**: A Google application development platform that provides backend services such as authentication, databases, and hosting.
+*   **i18next**: An internationalization (i18n) framework for JavaScript, used to manage and switch the user interface language.
+*   **React Router DOM**: A library for declarative routing in React applications.
 
-# Installation
+## Installation
 
-## 1. Clone the repository
+To set up and run the project locally, follow these steps:
 
-```bash
-git clone https://github.com/JuanAntonioMMalles/OfficialProyect.git
-cd React-Proyect-Warhammer40k
-```
+1.  **Clone the repository:**
 
-## 2. Install dependencies
+    ```bash
+    git clone <REPOSITORY_URL>
+    cd React-Proyect-Warhammer40k
+    ```
 
-```bash
-npm install
-```
+2.  **Install dependencies:**
 
-## 3. Run development server
+    ```bash
+    npm install
+    ```
+
+## Usage
+
+### Development Mode
+
+To start the application in development mode with Hot Module Replacement (HMR):
 
 ```bash
 npm run dev
 ```
 
-Application runs at:
+The application will be available at `http://localhost:5173` (or a similar port).
 
+### Production Mode
+
+To build the application for production:
+
+```bash
+npm run build
 ```
-http://localhost:5173
+
+This will generate optimized static files in the `dist/` directory. You can preview the production version with:
+
+```bash
+npm run preview
 ```
 
----
+## Project Structure
 
-# Project Structure
+The main project structure is as follows:
 
 ```
 React-Proyect-Warhammer40k/
-│
 ├── public/
-│   ├── img/                  # All project images
-│   └── locales/              # Translations
-│       ├── en/translation.json
-│       └── es/translation.json
-│
+│   └── img/             # Static images for the project
 ├── src/
-│   ├── App.jsx
-│   ├── main.jsx
-│   ├── style.css
-│   ├── i18n.js               # i18next configuration
-│
-│   ├── components/
-│   │   ├── Header.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Layout.jsx
-│   │   ├── Notification.jsx
-│   │   └── ScrollToHash.jsx
-│
-│   ├── sections/
-│   │   ├── FactionsSection.jsx
-│   │   ├── GallerySection.jsx
-│   │   ├── ProductsSection.jsx
-│   │   └── ContactSection.jsx
-│
-│   ├── pages/
-│   │   ├── HomePage.jsx
-│   │   ├── ProductFormPage.jsx
-│   │   └── NotFoundPage.jsx
-│
-│   ├── contexts/
-│   │   └── ProductsContext.jsx
-│
-│   ├── hooks/
-│   │   ├── useClickOutside.js
-│   │   └── useLocalStorage.js
-│
-│   └── data/
-│       ├── factions.json
-│       └── gallery.json
-│
-└── package.json
+│   ├── components/      # Reusable React components
+│   ├── contexts/        # React contexts for global state management
+│   ├── data/            # Static data or mocks
+│   ├── firebase/        # Firebase configuration and utilities
+│   ├── hooks/           # Custom React hooks
+│   ├── pages/           # Main application pages
+│   ├── sections/        # Specific sections of the pages
+│   ├── App.jsx          # Main application component
+│   ├── i18n.js          # i18next configuration
+│   ├── main.jsx         # Application entry point
+│   └── style.css        # Global styles
+├── dist/                # Build files for production
+├── firebase.json        # Firebase Hosting configuration
+├── index.html           # Main HTML file
+├── package.json         # Project metadata and dependencies
+├── README.md            # This file
+└── vite.config.js       # Vite configuration
 ```
 
----
+## Application Routes
 
-# Core Features
+The application defines the following routes:
 
-## 1. Multi-language Support (EN / ES)
+*   `/`: Landing page including factions, gallery, products, and contact sections.
+*   `/products`: Form for creating new products.
+*   `/products?id=<ID>`: Form for editing an existing product, where `<ID>` is the product identifier.
 
-Implemented using:
+## Firebase Configuration
 
-* i18next
-* react-i18next
-* Browser language detection
-* Translation files in `/public/locales`
+The `firebase.json` file configures the application's hosting on Firebase. The application is served from the `dist/` directory, and all routes are rewritten to `index.html` to enable client-side routing (SPA).
 
-Language switching is dynamic and automatic based on browser settings.
+## Internationalization (i18next)
 
----
+The project uses `i18next` to support multiple languages. Translation files are located in `dist/locales/` (or `public/locales/` if configured to be served directly). The `i18n.js` file in `src/` contains the i18next configuration.
 
-## 2. Routing (React Router)
+## Contribution
 
-Pages:
+Contributions are welcome. Please follow these steps:
 
-* `/` → HomePage
-* `/products/new` → ProductFormPage
-* `*` → NotFoundPage
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/new-feature`).
+3.  Make your changes and commit (`git commit -am 'feat: Add new feature'`).
+4.  Push your changes to the branch (`git push origin feature/new-feature`).
+5.  Open a Pull Request.
 
-Routing handled in `App.jsx`.
+## Feed reader
 
----
+<img src="./public/img/prove1.png" alt="Feed reader">
+<img src="./public/img/prove2.png" alt="Feed reader">
 
-## 3. State Management (Context API)
+## License
 
-`ProductsContext.jsx` provides:
-
-* Product list
-* Add product
-* Edit product
-* Delete product
-* Persistent storage via LocalStorage
-
-Custom hook `useLocalStorage.js` ensures data persistence between sessions.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
 ---
 
-## 4. Dynamic Sections
-
-### FactionsSection
-
-* Data loaded from `factions.json`
-* Dynamically rendered cards
-* Fully translatable content
-
-### GallerySection
-
-* Data-driven gallery using `gallery.json`
-* Image overlays
-
-### ProductsSection
-
-* Displays stored products
-* CRUD operations via context
-
-### ContactSection
-
-* Contact form
-* Validation
-* Notification component integration
-
----
-
-## 5. Custom Hooks
-
-### useLocalStorage
-
-Abstracts LocalStorage logic for clean state persistence.
-
-### useClickOutside
-
-Detects clicks outside elements (used for UI interactions such as menus or dropdowns).
-
----
-
-## 6. Reusable Components
-
-* Header (navigation + language toggle)
-* Footer
-* Layout wrapper
-* Notification system
-* ScrollToHash (anchor navigation behavior)
-
----
-
-# Internationalization Configuration
-
-Located in:
-
-```
-src/i18n.js
-```
-
-Features:
-
-* Language detection
-* HTTP backend loading
-* JSON-based translations
-* Namespace support
-
----
-
-# Available Scripts
-
-```bash
-npm run dev       # Development server
-npm run build     # Production build
-npm run preview   # Preview production build
-```
-
----
-
-# Data Structure (Products)
-
-Example product object:
-
-```javascript
-{
-  id: string,
-  name: string,
-  category: string,
-  price: number,
-  description: string,
-  stock: number
-}
-```
-
-Stored in LocalStorage via custom hook.
-
----
-
-# Architecture Highlights
-
-* Fully component-based design
-* Separation of pages, sections, components
-* Centralized state with Context API
-* Modular translation system
-* Scalable folder structure
-* Data-driven rendering via JSON files
-* Clean hook abstraction
-
----
-
-# Current Version
-
-**v3.1.0 – React Architecture + Internationalization + Routing**
-
-### Improvements over previous version
-
-* Migrated from static HTML to React
-* Added multilingual system
-* Introduced routing
-* Implemented Context API
-* Improved scalability
-* Modularized sections
-* Enhanced maintainability
-
----
-
-# Future Improvements
-
-* Backend integration (Node/Express)
-* Authentication system
-* Role-based access
-* Product search and filtering
-* Admin dashboard
-* Form validation library integration
-* Unit testing (Vitest / React Testing Library)
-* Deployment configuration (Vercel / Netlify)
-
----
-
+**Author:** Juan Antonio
+**Date:** March 15, 2026

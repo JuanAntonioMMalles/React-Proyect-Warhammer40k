@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useProducts } from "../contexts/ProductsContext.jsx";
 import { useNotification } from "../components/Notification.jsx";
+import ProductFormPage from "../pages/ProductFormPage.jsx";
 import { useTranslation } from "react-i18next";
 
 function getCategoryName(category, t) {
@@ -44,7 +45,7 @@ export default function ProductsSection() {
       <h2 className="main-title">{t("products.title")}</h2>
 
       <div className="products-actions">
-        <Link to="/products" className="btn-primary">
+        <Link to="/products/add" className="btn-primary">
           <i className="fa-solid fa-plus"></i> {t("products.add")}
         </Link>
       </div>

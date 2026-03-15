@@ -1,5 +1,5 @@
 import React, { useMemo, useRef, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useClickOutside } from "../hooks/useClickOutside.js";
 import { useTranslation } from "react-i18next";
 
@@ -11,23 +11,22 @@ export default function Header() {
 
   useClickOutside(containerRef, () => setOpen(false), open);
 
-  const isHome = location.pathname === "/";
+  const isHome = location.pathname === "/home";
 
   const navItems = useMemo(() => {
     if (isHome) {
       return [
-        { to: "/#factions", label: t("nav.factions"), icon: "fa-users" },
-        { to: "/#gallery", label: t("nav.gallery"), icon: "fa-images" },
-        { to: "/#products", label: t("nav.products"), icon: "fa-box" },
-        { to: "/#contact", label: t("nav.contact"), icon: "fa-envelope" }
+        { to: "/contact", label: t("nav.contact"), icon: "fa-envelope" },
+        { to: "/products", label: t("nav.products"), icon: "fa-box" },
+        { to: "/news", label: t("nav.news"), icon: "fa-newspaper" },
       ];
     }
 
     return [
-      { to: "/", label: t("nav.home"), icon: "fa-home" },
-      { to: "/#factions", label: t("nav.factions"), icon: "fa-users" },
-      { to: "/#gallery", label: t("nav.gallery"), icon: "fa-images" },
-      { to: "/#contact", label: t("nav.contact"), icon: "fa-envelope" }
+      { to: "/home", label: t("nav.home"), icon: "fa-home" },
+      { to: "/contact", label: t("nav.contact"), icon: "fa-envelope" },
+      { to: "/products", label: t("nav.products"), icon: "fa-box" },
+      { to: "/news", label: t("nav.news"), icon: "fa-newspaper" },
     ];
   }, [isHome, t]);
 
@@ -38,11 +37,13 @@ export default function Header() {
   return (
     <header id="header" ref={containerRef}>
       <div id="header-image">
-        <img
-          src="/img/aquila-imperialis.png"
-          alt={t("header.logoAlt")}
-          style={{ paddingTop: "45px" }}
-        />
+        <Link to="/home">
+          <img
+            src="/img/aquila-imperialis.png"
+            alt={t("header.logoAlt")}
+            style={{ paddingTop: "45px" }}
+          />
+        </Link>
       </div>
 
       <div id="header-title">{t("app.title")}</div>

@@ -1,0 +1,31 @@
+<rss version="2.0">
+  <channel>
+    <title>Warhammer News RSS</title>
+    <link>https://react-proyect-fcac9.web.app/</link>
+    <description>Latest news from the Warhammer project</description>
+    <language>en-us</language>
+
+    <item>
+      <title>Dawn of War 4</title>
+      <description><![CDATA[
+        <img src="https://react-proyect-fcac9.web.app/img/dawn-of-war-4.jpg" alt="Dawn of War 4 news image"/>
+        <p>Dawn of War 4 is a new game in the Dawn of War series. It is a real-time strategy game set in the Warhammer 40,000 universe.</p>
+      ]]></description>
+      <link>https://react-proyect-fcac9.web.app/news/dawn-of-war-4</link>
+      <guid isPermaLink="true">https://react-proyect-fcac9.web.app/news/dawn-of-war-4</guid>
+      <pubDate>Sat, 15 Mar 2026 15:31:07 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>New Chaos Update</title>
+      <description><![CDATA[
+        <img src="https://react-proyect-fcac9.web.app/img/chaos-gods.jpg" alt="Chaos update news image"/>
+        <p>New content for chaos factions. The update adds units, balance changes and visual improvements for dark armies.</p>
+      ]]></description>
+      <link>https://react-proyect-fcac9.web.app/news/new-chaos-update</link>
+      <guid isPermaLink="true">https://react-proyect-fcac9.web.app/news/new-chaos-update</guid>
+      <pubDate>Sun, 16 Mar 2026 10:00:00 GMT</pubDate>
+    </item>
+
+  </channel>
+</rss>
