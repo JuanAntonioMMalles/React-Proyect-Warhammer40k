@@ -2,7 +2,7 @@ import React from 'react';
 import GallerySection from '../sections/GallerySection.jsx';
 import FactionsSection from '../sections/FactionsSection.jsx';
 import { NotificationProvider } from '../components/Notification.jsx';
-import NewsCrud from '../sections/NewsCrud.jsx';
+import PlanetsCrud from '../sections/PlanetsCrud.jsx';
 
 export default function HomePage() {
   return (
@@ -14,7 +14,7 @@ export default function HomePage() {
         defaultCategory="all"
       />
       <GallerySection />
-      <NewsCrud />
+      <PlanetsCrud />
 
     </NotificationProvider>
   );
