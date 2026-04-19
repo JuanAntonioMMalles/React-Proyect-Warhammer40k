@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<planets>
+    <planet>
+        <name>Nocturne</name>
+        <sector>Segmentum Tempestus</sector>
+        <category>imperium</category>
+        <description>Volcanic homeworld of the Salamanders Chapter. Seven massive volcanoes dominate the landscape and its people are renowned for their resilience and craftsmanship.</description>
+        <image></image>
+    </planet>
+    <planet>
+        <name>Talarn</name>
+        <sector>Segmentum Solar</sector>
+        <category>imperium</category>
+        <description>Desert world famous for the Tallarn Desert Raiders regiment of the Astra Militarum. Its vast sand seas were created after a devastating orbital bombardment by the Iron Warriors.</description>
+        <image></image>
+    </planet>
+    <planet>
+        <name>Craftworld Iyanden</name>
+        <sector>Segmentum Ultima</sector>
+        <category>xenos</category>
+        <description>One of the largest Eldar Craftworlds, heavily damaged after a catastrophic Tyranid attack. The survivors now rely on the spirits of their dead warriors housed in Wraithbone constructs.</description>
+        <image></image>
+    </planet>
+    <planet>
+        <name>Medrengard</name>
+        <sector>Eye of Terror</sector>
+        <category>chaos</category>
+        <description>Daemon world and fortress-realm of Perturabo, Primarch of the Iron Warriors. An industrialised hell of iron walls, siege works and enslaved populations working without end.</description>
+        <image></image>
+    </planet>
+    <planet>
+        <name>Mordian</name>
+        <sector>Segmentum Obscurus</sector>
+        <category>dead</category>
+        <description>A tidally locked world of eternal night on one side and scorching day on the other. The Mordian Iron Guard regiment fights with rigid discipline forged by constant vigilance against the darkness.</description>
+        <image></image>
+    </planet>
+</planets>

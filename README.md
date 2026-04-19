@@ -1,126 +1,158 @@
 # React Warhammer 40K Project
 
+> **UT5 – Import / Export XML, CSV and JSON with Firebase**
+
+---
+
 ## Project Description
 
-This project is a single-page application (SPA) developed with React and Vite, dedicated to Warhammer 40,000 enthusiasts. The application features information about factions, an image gallery, a products section, and a contact form. It uses Firebase for the backend and i18next for internationalization, offering a dynamic and localized user experience.
+This project is a single-page application (SPA) built with **React + Vite** dedicated to Warhammer 40,000 enthusiasts. It features dynamic content about factions, an image gallery, a products catalogue, and a full CRUD for Warhammer planets stored in **Firebase Firestore**. Starting from UT5 the planets CRUD also supports importing and exporting data in **JSON, CSV and XML** formats.
+
+---
+
+## Live Demo
+
+[https://react-proyect-fcac9.web.app](https://react-proyect-fcac9.web.app)
+
+---
 
 ## Technologies Used
 
-The project has been built using the following key technologies:
+| Technology | Purpose |
+|---|---|
+| **React 18** | UI library |
+| **Vite** | Dev server & bundler |
+| **Firebase Firestore** | Cloud database |
+| **React Router DOM v6** | Client-side routing |
+| **i18next** | Internationalisation (EN / ES) |
 
-*   **React**: A JavaScript library for building interactive user interfaces.
-*   **Vite**: A next-generation web development bundler, offering fast startup and Hot Module Replacement (HMR).
-*   **Firebase**: A Google application development platform that provides backend services such as authentication, databases, and hosting.
-*   **i18next**: An internationalization (i18n) framework for JavaScript, used to manage and switch the user interface language.
-*   **React Router DOM**: A library for declarative routing in React applications.
+---
 
 ## Installation
 
-To set up and run the project locally, follow these steps:
-
-1.  **Clone the repository:**
-
-    ```bash
-    git clone <REPOSITORY_URL>
-    cd React-Proyect-Warhammer40k
-    ```
-
-2.  **Install dependencies:**
-
-    ```bash
-    npm install
-    ```
-
-## Usage
-
-### Development Mode
-
-To start the application in development mode with Hot Module Replacement (HMR):
-
 ```bash
+# 1. Clone the repository
+git clone https://github.com/JuanAntonioMMalles/React-Proyect-Warhammer40k.git
+cd React-Proyect-Warhammer40k
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173` (or a similar port).
+The application will be available at `http://localhost:5173`.
 
-### Production Mode
-
-To build the application for production:
+### Production build
 
 ```bash
 npm run build
-```
-
-This will generate optimized static files in the `dist/` directory. You can preview the production version with:
-
-```bash
 npm run preview
 ```
 
+### Deploy to Firebase Hosting
+
+```bash
+npm run build
+firebase deploy
+```
+
+---
+
 ## Project Structure
 
-The main project structure is as follows:
-
 ```
-React-Proyect-Warhammer40k/
-├── public/
-│   └── img/             # Static images for the project
-├── src/
-│   ├── components/      # Reusable React components
-│   ├── contexts/        # React contexts for global state management
-│   ├── data/            # Static data or mocks
-│   ├── firebase/        # Firebase configuration and utilities
-│   ├── hooks/           # Custom React hooks
-│   ├── pages/           # Main application pages
-│   ├── sections/        # Specific sections of the pages
-│   ├── App.jsx          # Main application component
-│   ├── i18n.js          # i18next configuration
-│   ├── main.jsx         # Application entry point
-│   └── style.css        # Global styles
-├── dist/                # Build files for production
-├── firebase.json        # Firebase Hosting configuration
-├── index.html           # Main HTML file
-├── package.json         # Project metadata and dependencies
-├── README.md            # This file
-└── vite.config.js       # Vite configuration
+src/
+├── firebase/
+│   └── firebase.js          # Firebase initialisation (app + db)
+├── services/
+│   └── planetsService.js    # ✅ Centralised Firebase access layer
+├── sections/
+│   └── PlanetsCrud.jsx      # Planets CRUD with import/export UI
+├── components/              # Header, Footer, Layout, Notification…
+├── contexts/                # ProductsContext (localStorage)
+├── hooks/                   # useLocalStorage, useClickOutside
+├── pages/                   # Route-level page components
+└── style.css
 ```
 
-## Application Routes
+### Services layer (`src/services/`)
 
-The application defines the following routes:
+All Firebase Firestore calls for the **planets** collection are centralised in `planetsService.js`. Components never import `db` directly – they call service functions:
 
-*   `/`: Landing page including factions, gallery, products, and contact sections.
-*   `/products`: Form for creating new products.
-*   `/products?id=<ID>`: Form for editing an existing product, where `<ID>` is the product identifier.
+| Function | Description |
+|---|---|
+| `getPlanets()` | Fetch all planet documents |
+| `addPlanet(data)` | Create a new document |
+| `updatePlanet(id, data)` | Update an existing document |
+| `deletePlanet(id)` | Delete a document |
+| `importPlanets(array)` | Batch-write multiple planets |
 
-## Firebase Configuration
+---
 
-The `firebase.json` file configures the application's hosting on Firebase. The application is served from the `dist/` directory, and all routes are rewritten to `index.html` to enable client-side routing (SPA).
+## Import / Export Feature
 
-## Internationalization (i18next)
+On the **Planets** page you will find an **Import / Export toolbar** that lets you:
 
-The project uses `i18next` to support multiple languages. Translation files are located in `dist/locales/` (or `public/locales/` if configured to be served directly). The `i18n.js` file in `src/` contains the i18next configuration.
+### Export
+- **⬇ JSON** → downloads `datos.json`
+- **⬇ CSV** → downloads `datos.csv`
+- **⬇ XML** → downloads `datos.xml`
 
-## Contribution
+All exported files contain exactly the planets currently stored in Firebase.
 
-Contributions are welcome. Please follow these steps:
+### Import
+Click **📂 Choose file** and select a `.json`, `.csv` or `.xml` file. Each record is validated and written to Firestore via a batch write.
 
-1.  Fork the repository.
-2.  Create a new branch (`git checkout -b feature/new-feature`).
-3.  Make your changes and commit (`git commit -am 'feat: Add new feature'`).
-4.  Push your changes to the branch (`git push origin feature/new-feature`).
-5.  Open a Pull Request.
+Expected fields per planet:
 
-## Feed reader
+| Field | Type | Required |
+|---|---|---|
+| `name` | string | ✅ |
+| `sector` | string | ✅ |
+| `category` | `imperium` \| `xenos` \| `chaos` \| `dead` | ✅ |
+| `description` | string | ✅ |
+| `image` | string (URL) | optional |
+
+---
+
+## Sample Import Files
+
+Download these files and import them directly into the app:
+
+| Format | Link |
+|---|---|
+| JSON | [datos.json](public/sample-data/datos.json) |
+| CSV | [datos.csv](public/sample-data/datos.csv) |
+| XML | [datos.xml](public/sample-data/datos.xml) |
+
+Each file contains **5 example Warhammer planets** ready to be imported.
+
+---
+
+## Git Branches
+
+```
+main
+└── develop
+    └── feature/import-and-export   ← new branch for this feature
+```
+
+Branch workflow:
+1. Feature developed on `feature/import-and-export`
+2. Merged into `develop`
+3. Merged into `main` and deployed
+
+---
+
+## Screenshots
 
 <img src="./public/img/prove1.png" alt="Feed reader">
 <img src="./public/img/prove2.png" alt="Feed reader">
 
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
 ---
 
-**Author:** Juan Antonio
-**Date:** March 15, 2026
+## Author
+
+- **Name:** Juan Antonio Miranda Malles
