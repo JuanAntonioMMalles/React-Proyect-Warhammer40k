@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Cadia",
+    "sector": "Cadian Sector",
+    "category": "imperium",
+    "description": "Fortress world and gateway to the Eye of Terror. Stood as the Imperium's first line of defence against Chaos incursions for ten thousand years until its fall during the 13th Black Crusade.",
+    "image": ""
+  },
+  {
+    "name": "Macragge",
+    "sector": "Realm of Ultramar",
+    "category": "imperium",
+    "description": "Homeworld of the Ultramarines Chapter and seat of their Primarch Roboute Guilliman. A highly developed world known for its strong military tradition and disciplined citizenry.",
+    "image": ""
+  },
+  {
+    "name": "Commorragh",
+    "sector": "Webway",
+    "category": "xenos",
+    "description": "The Dark City, a sprawling realm hidden within the Webway and home to the Drukhari (Dark Eldar). A place of eternal twilight where billions of slaves are held captive.",
+    "image": ""
+  },
+  {
+    "name": "Medusa",
+    "sector": "Galactic Core",
+    "category": "imperium",
+    "description": "A dying, ice-encrusted world and homeworld of the Iron Hands Space Marines. The harsh environment forged its people into warriors of iron will and cold logic.",
+    "image": ""
+  },
+  {
+    "name": "Ymgarl",
+    "sector": "Unknown",
+    "category": "xenos",
+    "description": "A dead moon, origin world of the Ymgarl Genestealers – the first Tyranid organisms encountered by the Imperium. The world itself was devoured long ago by the Hive Fleet.",
+    "image": ""
+  }
+]
