@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import * as XLSX from "xlsx";
 import {
     getPlanets,
     addPlanet,
@@ -56,10 +57,28 @@ function exportXML(planets) {
         )
         .join("\n");
     const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<planets>\n${items}\n</planets>`;
-    downloadFile(xml, "data.xml", "application/xml");
+    downloadFile(xml, "datos.xml", "application/xml");
 }
 
+function exportXLSX(planets) {
+    const HEADERS = ["name", "sector", "category", "description", "image"];
+    const rows = [HEADERS, ...planets.map((p) => HEADERS.map((h) => p[h] || ""))];
+    const worksheet = XLSX.utils.aoa_to_sheet(rows);
+    worksheet["!cols"] = [
+        { wch: 20 }, { wch: 22 }, { wch: 12 }, { wch: 55 }, { wch: 40 }
+    ];
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Planets");
+    XLSX.writeFile(workbook, "datos.xlsx");
+}
 
+function parseXLSX(buffer) {
+    const workbook = XLSX.read(buffer, { type: "array" });
+    const sheet = workbook.Sheets[workbook.SheetNames[0]];
+    // Convert to array-of-objects using first row as header
+    const rows = XLSX.utils.sheet_to_json(sheet, { defval: "" });
+    return rows.map(sanitize);
+}
 
 const VALID_CATEGORIES = ["imperium", "xenos", "chaos", "dead"];
 
@@ -189,17 +208,23 @@ export default function PlanetsCRUD() {
         setLoading(true);
 
         try {
-            const text = await file.text();
             let parsed = [];
 
-            if (file.name.endsWith(".json")) {
-                parsed = parseJSON(text);
-            } else if (file.name.endsWith(".csv")) {
-                parsed = parseCSV(text);
-            } else if (file.name.endsWith(".xml")) {
-                parsed = parseXML(text);
+            if (file.name.endsWith(".xlsx") || file.name.endsWith(".xls")) {
+                // SheetJS needs an ArrayBuffer, not a text string
+                const buffer = await file.arrayBuffer();
+                parsed = parseXLSX(new Uint8Array(buffer));
             } else {
-                throw new Error("Unsupported format. Use .json, .csv or .xml");
+                const text = await file.text();
+                if (file.name.endsWith(".json")) {
+                    parsed = parseJSON(text);
+                } else if (file.name.endsWith(".csv")) {
+                    parsed = parseCSV(text);
+                } else if (file.name.endsWith(".xml")) {
+                    parsed = parseXML(text);
+                } else {
+                    throw new Error("Unsupported format. Use .json, .csv, .xml or .xlsx");
+                }
             }
 
             if (parsed.length === 0) throw new Error("No valid planets found in file.");
@@ -228,11 +253,11 @@ export default function PlanetsCRUD() {
                 <div className="import-group">
                     <span className="toolbar-label">Import:</span>
                     <label className="btn-import" title="Import planets from a file">
-                        📂 Choose file (.json / .csv / .xml)
+                        📂 Choose file (.json / .csv / .xml / .xlsx)
                         <input
                             ref={fileInputRef}
                             type="file"
-                            accept=".json,.csv,.xml"
+                            accept=".json,.csv,.xml,.xlsx,.xls"
                             style={{ display: "none" }}
                             onChange={handleImport}
                             disabled={loading}
@@ -246,6 +271,7 @@ export default function PlanetsCRUD() {
                     <button className="btn-export" onClick={() => exportJSON(planets)} disabled={planets.length === 0}>⬇ JSON</button>
                     <button className="btn-export" onClick={() => exportCSV(planets)} disabled={planets.length === 0}>⬇ CSV</button>
                     <button className="btn-export" onClick={() => exportXML(planets)} disabled={planets.length === 0}>⬇ XML</button>
+                    <button className="btn-export" onClick={() => exportXLSX(planets)} disabled={planets.length === 0}>⬇ XLSX</button>
                 </div>
             </div>
 
